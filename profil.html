@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+</head>
+<body>
+    
+    <div class="container ">
+
+        <div class="w-screen bg-slate-800">
+            <nav class="w-full flex py-6 justify-between items-center navbar"><img src="./public/images/mylogo22.png"
+                    alt="hoobank" class="w-[120px] h-[80px]">
+                <ul class="list-none sm:flex hidden justify-end items-center flex-1 px-9">
+                    <li class="font-poppins font-normal cursor-pointer text-[16px] text-white mr-10"><a
+                            href="index.html">Home</a></li>
+                    <li class="font-poppins font-normal cursor-pointer text-[16px] text-white mr-10"><a
+                            href="organize_Hackathon.html">Organise Hackathon</a></li>
+                    <li class="font-poppins font-normal cursor-pointer text-[16px] text-white mr-0"><a
+                            href="loginFile.html">Logout</a></li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <!-- left side for profile card -->
+
+        <div class="bodypart flex overflow-hidden">
+            <div class="leftcard bg-slate-600 text-white w-[300px] h-[400px] rounded-2xl m-4">
+                <img src="https://miro.medium.com/max/1024/1*qzwKz8AvnUayRgboTdJPJQ.jpeg" class="rounded-2xl">
+    
+                <div class="card flex justify-center relative top-[-20px]">
+                    <img src="https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2021-12-13T06%3A22%3A04.610Z-default-image.webp" onerror="this.onerror=null;this.src='https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2021-12-13T06%3A22%3A04.610Z-default-image.webp'" class="h-[90px] w-[90px] rounded-lg">
+                </div>
+                <div class="flex justify-center h-[50px]">Username</div>
+                <div class="flex justify-center h-[30px]">Role</div>
+            </div>
+            <!-- right side for your hackathons -->
+    
+            <div class="rightpart overflow-hidden px-[100px]">
+                
+                
+                
+                <div class="card bg-slate-500 text-white h-[400px] mt-3 w-[330px] rounded-lg">
+                    <img src="./public/images/apple.svg" alt="">
+
+                </div>
+
+            </div>
+    
+        </div>
+
+    </div>
+</body>
+</html>

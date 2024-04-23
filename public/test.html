@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Hack2skill | Organize best hackathons and tech camps</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"
+        defer>
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer />
+    <!-- SPLIDER CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <!-- HOME CSS -->
+    <!-- <link rel="stylesheet" href="/home/css/main.css"> -->
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <!-- Testimonials Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: rgba(14, 27, 73, 0.804);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+        ==============================================
+        ==============================================
+                            NAVBAR
+        ==============================================
+        ==============================================
+     -->
+    <div class="bg-slate-800 w-[100%] text-white h-full overflow-hidden ">
+
+        <div class="sm:px-16 px-6 flex justify-center items-center">
+            <div class="xl:max-w-[1280px] w-full">
+                <nav class="w-full flex py-6 justify-between items-center navbar"><img src="./images/myLogo.jpeg"
+                        alt="hoobank" class="w-[105px] h-[60px]">
+                    <ul class="list-none sm:flex hidden justify-end items-center flex-1">
+                        <li class="font-poppins font-normal cursor-pointer text-[16px] text-white mr-10"><a
+                                href="index.html">Home</a></li>
+                        <li class="font-poppins font-normal cursor-pointer text-[16px] text-white mr-10"><a
+                                href="submitForm.html">Organise Hackathon</a></li>
+                        <li class="font-poppins font-normal cursor-pointer text-[16px] text-white mr-10"><a
+                                href="#product">Blogs</a></li>
+                        <li class="font-poppins font-normal cursor-pointer text-[16px] text-white mr-10 ">
+
+                            <div class="dropdown user-profile">
+                                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <p id="usernameResult"></p>
+                                    <i class="fas fa-user-circle pl-sm-2" aria-hidden="true"></i>
+                                </a>
+
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/dashboard">
+                                        <i class="fas fa-tachometer-alt pr-2" aria-hidden="true"></i>
+                                        Dashboard
+                                    </a>
+                                    <a class="dropdown-item" href="/viewprofile">
+                                        <i class="fas fa-user-circle pr-2" aria-hidden="true"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="/profile">
+                                        <i class="fas fa-cog pr-2"></i>
+                                        Edit Profile
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item text-danger" href="index.html">
+                                        <i class="fas fa-sign-out-alt pr-2" aria-hidden="true"></i>
+                                        Log out
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 
+        ==============================================
+        ==============================================
+                        HERO SECTION
+        ==============================================
+        ==============================================
+     -->
+
+
+    <section class="wrapper bg-slate-800 text-white">
+        <div class="container-fluid hero-section">
+            <div class="container">
+                <div class="row content-area">
+                    <div class="col-xl-5 col-lg-6 col-12 order-lg-1 order-2">
+                        <h1 class="">Learn <br> Explore <br> Upskill</h1>
+                        <p>
+                            ZenHack is a platform where you can organize hackathon and join the community with other
+                            develoers.
+                        </p>
+                        <a name="" id="" class="btn btn-gradient" href="#ongoin-initiatives" role="button">
+                            Explore Hackathon
+                        </a>
+                        <a name="" id="" class="btn btn-gradient-outline" href="form.html" role="button">
+                            Organize Hackathon
+                        </a>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 col-sm-6 col-8 order-lg-2 order-1">
+                        <img class="char-img" src="./images/hero-main-char.svg" alt="Floting Human" width="289"
+                            height="auto">
+                    </div>
+                </div>
+                <div class="row initiative-section">
+                    <div class="col-lg-4 col-sm-6 col-8 mb-4">
+                        <img src="./images/initiative-svg.svg" alt="Initiatives" height="350" width="350">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 my-auto">
+                        <h3>
+                            Upskill with ZenHack
+                        </h3>
+                        <a name="" id="" class="btn btn-gradient" href="#ongoin-initiatives" role="button">
+                            Start your journey now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <img class="decor-img"
+                src="https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-03-04T12%3A37%3A30.012Z-hero_svg_design_v2.webp"
+                alt="Decorate Background Image">
+        </div>
+    </section>
+    <!-- 
+        ==============================================
+        ==============================================
+                    Featured Hacakthon
+        ==============================================
+        ==============================================
+     -->
+    <div class="container-fluid py-4 position-relative bg-slate-800 text-white">
+        <div id="ongoin-initiatives" class="link"></div>
+        <div class="d-flex justify-content-center text-center mb-3 featured_event_hacks">
+            <h2>Featured Innovation Challenges and Hackathons </h2>
+        </div>
+
+
+
+
+        <div class="d-none d-md-block">
+            <div class="swiper mySwiper">
+
+                <div class="swiper-wrapper">
+
+                    <!-- for new card here  -->
+                    <div id="hackathonCardsContainer" class="row"></div>
+
+                    <!-- <div class="swiper-slide newCard ">
+                        <a class="text-link"
+                            href="https://hack2skill.com/hack/dtdl-hackfest5?utm_source=h2shomepage&amp;utm_medium=h2shomepage"
+                            target="_blank">
+                            <div class="card hack-event-card bg-slate-600 text-white">
+                                <img class="card-img-top border-bottom"
+                                    src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-03-26T06%3A17%3A03.902Z-homepage%20%283%29.png"
+                                    alt="DTDL HackDFest 5.0">
+                                <div class="card-body text-white">
+                                    <h6>
+                                        DTDL HackDFest 5.0
+                                    </h6>
+                                    <p class="hack-description">
+                                        Innovating the Future, Together!
+                                        Raw potential needs a launchpad, that&#39;s where HackFest 5.0 comes in.
+                                    </p>
+                                    <p class="last-date">
+                                        Last date to register:
+                                        Wed Apr 24 2024
+                                    </p>
+                                    <div class="clearfix">
+                                        <div class="float-left">
+                                            <p class="reg-fee">
+                                                <span>Fee: </span>
+                                                Free
+                                            </p>
+                                        </div>
+                                        <div class="float-right">
+                                            <p class="hack-type">
+                                                Mode : <span class="text-success">
+                                                    Offline
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <a name="" id="" class="btn btn-gradient w-100"
+                                        href="https://hack2skill.com/hack/dtdl-hackfest5?utm_source=h2shomepage&amp;utm_medium=h2shomepage"
+                                        role="button" target="_blank" rel="noreferrer">
+                                        Register Now
+                                    </a>
+                                </div>
+                            </div>
+                        </a>
+                    </div> -->
+
+
+                    <!-- <div class="swiper-slide newCard ">
+                        <a class="text-link"
+                            href="https://hack2skill.com/hack/h2s-vision-panel?utm_source=homepage&amp;utm_medium=promotional"
+                            target="_blank">
+                            <div class="card hack-event-card">
+                                <img class="card-img-top border-bottom"
+                                    src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-04-04T04%3A57%3A27.781Z-ACE_Hackathon.png"
+                                    alt="How to Ace Hackathons - The Winner&#39;s Guide">
+                                <div class="card-body">
+                                    <h6>
+                                        How to Ace Hackathons - The Winner&#39;s Guide
+                                    </h6>
+                                    <p class="hack-description">
+                                        Are you ready to elevate your hacking game to the next level? Here&#39;s your
+                                        golden ticket to insider knowledge and expert advice!
+                                    </p>
+                                    <p class="last-date">
+                                        Event Date:
+                                        Fri Apr 05 2024
+                                    </p>
+                                    <div class="clearfix">
+                                        <div class="float-left">
+                                            <p class="reg-fee">
+                                                <span>Fee: </span>
+                                                Free
+                                            </p>
+                                        </div>
+                                        <div class="float-right">
+                                            <p class="hack-type">
+                                                Mode : <span class="text-success">
+                                                    Online
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <a name="" id="" class="btn btn-gradient w-100 reg-close-btn"
+                                        href="https://hack2skill.com/hack/h2s-vision-panel?utm_source=homepage&amp;utm_medium=promotional"
+                                        role="button" target="_blank" rel="noreferrer">
+                                    </a>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide newCard ">
+                        <a class="text-link"
+                            href="https://hack2skill.com/hack/genai_hackathon_apac_edition?utm_source=h2s_homepage&amp;utm_medium=h2s_listing"
+                            target="_blank">
+                            <div class="card hack-event-card">
+                                <img class="card-img-top border-bottom"
+                                    src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-01-29T05%3A27%3A31.328Z-genAi_homepage.png"
+                                    alt="GenAI Hackathon | APAC Edition">
+                                <div class="card-body">
+                                    <h6>
+                                        GenAI Hackathon | APAC Edition
+                                    </h6>
+                                    <p class="hack-description">
+                                        Imagine unleashing the combined power of Google Cloud&#39;s GenAI tools and your
+                                        own ingenuity! The GenAI Hackathon APAC Edition is your chance to revolutionise
+                                        AI solutions for your region. Dive into real-world challenges across industries
+                                        like Banking &amp; Financial Services, Manufacturing, Retail &amp; eCommerce,
+                                        Media &amp; Entertainment, and Innovation. Build cutting-edge applications with
+                                        tools like Vertex AI, Duet AI, GenAI app builder, Model Garden, and more. Let
+                                        your imagination soar as you reshape industries, enhance experiences, and solve
+                                        critical problems with the power of AI.
+                                    </p>
+                                    <p class="last-date">
+                                        Registrations end:
+                                        Sun Mar 17 2024
+                                    </p>
+                                    <div class="clearfix">
+                                        <div class="float-left">
+                                            <p class="reg-fee">
+                                                <span>Fee: </span>
+                                                Free
+                                            </p>
+                                        </div>
+                                        <div class="float-right">
+                                            <p class="hack-type">
+                                                Mode : <span class="text-success">
+                                                    Online
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <a name="" id="" class="btn btn-gradient w-100 reg-close-btn"
+                                        href="https://hack2skill.com/hack/genai_hackathon_apac_edition?utm_source=h2s_homepage&amp;utm_medium=h2s_listing"
+                                        role="button" target="_blank" rel="noreferrer">
+                                    </a>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide newCard ">
+                        <a class="text-link"
+                            href="https://hack2skill.com/hack/informatica-deh-2024?utm_source=h2shomepage&amp;utm_medium=h2shomepage"
+                            target="_blank">
+                            <div class="card hack-event-card">
+                                <img class="card-img-top border-bottom"
+                                    src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-02-13T11%3A52%3A29.218Z-homepage1.png"
+                                    alt="Data Engineering Hackathon 2024">
+                                <div class="card-body">
+                                    <h6>
+                                        Data Engineering Hackathon 2024
+                                    </h6>
+                                    <p class="hack-description">
+                                        It is your platform to dive into the world of innovation, problem-solving, and
+                                        cutting-edge technology.
+                                    </p>
+                                    <p class="last-date">
+                                        Last date to register:
+                                        Fri Mar 15 2024
+                                    </p>
+                                    <div class="clearfix">
+                                        <div class="float-left">
+                                            <p class="reg-fee">
+                                                <span>Fee: </span>
+                                                Free
+                                            </p>
+                                        </div>
+                                        <div class="float-right">
+                                            <p class="hack-type">
+                                                Mode : <span class="text-success">
+                                                    Online
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <a name="" id="" class="btn btn-gradient w-100 reg-close-btn"
+                                        href="https://hack2skill.com/hack/informatica-deh-2024?utm_source=h2shomepage&amp;utm_medium=h2shomepage"
+                                        role="button" target="_blank" rel="noreferrer">
+                                    </a>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div> -->
+
+
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <!-- <div class="mt-5 d-block d-md-none phone-initiative">
+            <div class="row element_row">
+
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="card hack-event-card">
+                        <img class="card-img-top border-bottom"
+                            src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-03-26T06%3A17%3A03.902Z-homepage%20%283%29.png"
+                            alt="DTDL HackDFest 5.0">
+                        <div class="card-body">
+                            <h6>
+                                DTDL HackDFest 5.0
+                            </h6>
+                            <p class="last-date">
+                                Last date to register:
+                                Wed Apr 24 2024
+                            </p>
+                            <a name="" id="" class="btn btn-gradient w-100"
+                                href="https://hack2skill.com/hack/dtdl-hackfest5?utm_source=h2shomepage&amp;utm_medium=h2shomepage"
+                                role="button" rel="noreferrer">
+                                Register Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a name="explore" id="explore" class="btn btn-gradient mx-0" href="javascript:void(0);"
+                        role="button" onclick="clickControl();">
+                        <span class="toggle_me" style="display: block;">Show More</span>
+                        <span class="toggle_me">Show Less</span>
+                    </a>
+                </div>
+            </div>
+        </div> -->
+    
+    
+    </div>
+    <!-- Organise Hackathon-->
+    <div class="container-fluid connect-section bg-slate-800 text-white">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card connect-card">
+                    <div class="card-body text-center">
+                        <h2>Want to organize HACKATHON?</h2>
+                        <p class="card-text my-4">Connect with us for organizing a HACKATHON on our platform.</p>
+                        <a name="" id="" class="btn btn-gradient" href="/organizeHack" role="button">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- imported white footer -->
+    <footer>
+        <div class="container-fluid bg-slate-800 h-[300px]">
+            <!-- Lg Md footer -->
+
+            <div
+                class="w-full h-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
+                <p class="font-poppins font-normal text-center text-[18px] leading-[27px] text-white bg-slate-800">
+                    Copyright
+                    Ⓒ 2022 HooBank. All Rights Reserved.</p>
+                <div class="flex flex-row md:mt-0 mt-6"><img src="./images/instagram.svg" alt="social-media-1"
+                        class="w-[21px] h-[21px] object-contain cursor-pointer mr-6"><img src="./images/facebook.svg"
+                        alt="social-media-2" class="w-[21px] h-[21px] object-contain cursor-pointer mr-6"><img
+                        src="./images/twitter.svg" alt="social-media-3"
+                        class="w-[21px] h-[21px] object-contain cursor-pointer mr-6"><img src="./images/linkedin.svg"
+                        alt="social-media-4" class="w-[21px] h-[21px] object-contain cursor-pointer mr-0"></div>
+            </div>
+
+
+
+            <script>
+                document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+                document.getElementById("username").textContent = username;
+            </script>
+
+
+
+
+            <!-- Include jQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    // Add click event to dropdown toggle
+                    $('.user-profile .dropdown-toggle').click(function () {
+                        // Toggle the dropdown menu
+                        $(this).next('.dropdown-menu').toggle();
+                    });
+
+                    // Close dropdown when clicking outside of it
+                    $(document).click(function (e) {
+                        if (!$(e.target).closest('.user-profile').length) {
+                            $('.dropdown-menu').hide();
+                        }
+                    });
+                });
+            </script>
+
+        </div>
+
+
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                cssMode: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                    clickable: true,
+                },
+                slidesPerView: 4,
+                spaceBetween: 50,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                mousewheel: true,
+                keyboard: true,
+                grabCursor: true,
+                breakpoints: {
+                    "@0.00": {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    "@0.75": {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    "@1.00": {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                    "@1.50": {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    },
+                },
+            });
+            var swiperTest = new Swiper(".myTestimonialSwiper", {
+                cssMode: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                    clickable: true,
+                },
+                slidesPerView: 4,
+                spaceBetween: 50,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                mousewheel: true,
+                keyboard: true,
+                grabCursor: true,
+                breakpoints: {
+                    "@0.00": {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    "@0.99": {
+                        slidesPerView: 2,
+                        spaceBetween: 40,
+                    },
+                    "@1.45": {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                    "@1.85": {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    },
+                },
+            });
+            var swiperInt = new Swiper(".myIntSwiper", {
+                cssMode: true,
+                grabCursor: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                    clickable: true,
+                },
+                slidesPerView: 1,
+                spaceBetween: 50,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                mousewheel: true,
+                keyboard: true
+            });
+        </script>
+
+        <script>
+            var eventLength = $('.element_row')[0].children.length;
+            var i = 4;
+            console.log(eventLength);
+
+            if (eventLength > 4) {
+                console.log("Enter IF");
+                for (i; i < (eventLength); i++) {
+                    $('.element_row')[0].children[i].classList.add('toggle_me');
+                }
+            } else {
+                console.log("Event less than 4");
+            }
+            var eventLengthcH = $('.element_row_cH')[0].children.length;
+            var j = 4;
+            console.log(eventLengthcH);
+
+            if (eventLengthcH > 4) {
+                console.log("Enter IF");
+                for (j; j < (eventLengthcH); j++) {
+                    $('.element_row_cH')[0].children[j].classList.add('toggle_me_cH');
+                }
+            } else {
+                console.log("Event less than 4");
+            }
+        </script>
+
+        <script>
+            const closeBtn = document.getElementById('closeNewSitePopUp');
+            closeBtn.addEventListener('click', function () {
+                document.getElementById('new-site-popup').style.display = 'none';
+            });
+        </script>
+
+        <script>
+            // Retrieve email from local storage
+            const email = localStorage.getItem('email');
+
+            // Fetch username based on email
+            fetch(`/getUsername?email=${encodeURIComponent(email)}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.username) {
+                        document.getElementById('usernameResult').textContent = `${data.username}`;
+                    } else {
+                        document.getElementById('usernameResult').textContent = `Error: User not found`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching username:', error);
+                    document.getElementById('usernameResult').textContent = 'Error fetching username';
+                });
+        </script>
+
+        <!-- to create the new hackathon -->
+
+        <script>
+            document.addEventListener('DOMContentLoaded', async function () {
+                try {
+                    const response = await fetch('/api/hackathons');
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch hackathons');
+                    }
+                    const hackathons = await response.json();
+                    const container = document.getElementById('hackathonCardsContainer');
+                    hackathons.forEach(hackathon => {
+                        const card = createHackathonCard(hackathon);
+                        container.appendChild(card);
+                    });
+                } catch (error) {
+                    console.error('Error fetching hackathons:', error);
+                }
+            });
+        
+            function createHackathonCard(hackathon) {
+                const card = document.createElement('div');
+                card.className = 'col p-md-3';
+        
+                card.innerHTML = `
+                    <div class="swiper-slide newCard">
+                        <a class="text-link" href="https://example.com" target="_blank">
+                            <div class="card hack-event-card bg-slate-600 text-white">
+                                <img class="card-img-top border-bottom" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-04-04T04%3A57%3A27.781Z-ACE_Hackathon.png" alt="New Hackathon">
+                                <div class="card-body text-white">
+                                    <h6>${hackathon.title}</h6>
+                                    <p class="hack-description">${hackathon.description}</p>
+                                    <p class="last-date">Last date to register: ${hackathon.startDate}</p>
+                                    <div class="clearfix">
+                                        <div class="float-left">
+                                            <p class="reg-fee">
+                                                <span>Fee: </span>
+                                                Paid
+                                            </p>
+                                        </div>
+                                        <div class="float-right">
+                                            <p class="hack-type">
+                                                Mode : <span class="text-success">${hackathon.mode}</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <a name="" id="" class="btn btn-gradient w-100" href="https://example.com" role="button" target="_blank"
+                                        rel="noreferrer">
+                                        Register Now
+                                    </a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+        
+                return card;
+            }
+        </script>
+        
+        
+</body>
+
+</html>
