@@ -162,7 +162,7 @@
 
             <div class="col p-md-3 form_container" id="collegehackathon">
                 <strong>Fill the required information</strong>
-                <form class="m-3" id="clg_form" name="form" action="/createHackaThon" method="POST" onsubmit="return validateForm()">
+                <form class="m-3" id="clg_form" name="form" action="/createHackaThon" method="POST">
                     <!-- Personal info -->
                     <div class="form-step form-step-active">
                         <!--Name-->
@@ -310,7 +310,7 @@
                     <div class="btns-group d-flex justify-content-between w-100">
                         <div class="form-group d-flex align-items-baseline">
                             <button type="submit" id="registerButton" class="btn btn-primary m-2 btn-block">
-                                Submit Form
+                                Request Now
                             </button>
                         </div>
                     </div>
@@ -363,6 +363,7 @@
                     alert('Failed to submit hackathon request. Please try again later.');
                 }
             });
+
         });
 
     </script>
@@ -370,11 +371,11 @@
     <!-- to creat a card for creating a hackathon -->
 
     <script>
-   
 
-        document.getElementById('clg_form').addEventListener('submit', function(event) {
+
+        document.getElementById('clg_form').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent form submission
-    
+
             // Get data from form fields
             const name = document.getElementById('hackathonname').value;
             const description = document.getElementById('hackathonbrief').value;
@@ -383,59 +384,15 @@
             const mode = document.querySelector('input[name="hackathonnature"]:checked').value;
             const image = ""; // Add an image URL if you have one
             const link = ""; // Add a link URL if you have one
-    
+
             // Call function to add new hackathon card with the retrieved data
-            const addNewHackathonCard={ name, description, lastDate, fee, mode, image, link };
-    
+            const addNewHackathonCard = { name, description, lastDate, fee, mode, image, link };
+
             // Optional: Reset the form after submission
             window.parent.postMessage(addNewHackathonCard, 'test.html');
         });
     </script>
 
-<!-- CHECK THE FORM IF INFORMATION IS CORRECT IS NOT  in form ive writter ONSUBMIT = REUTRN VALIDATE()    not woking --> 
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('clg_form');
-    const submitButton = document.getElementById('registerButton');
-
-    submitButton.addEventListener('click', async function (event) {
-        event.preventDefault();
-
-        if (validateForm()) {
-            const formData = new FormData(form);
-            const hackathonData = {};
-            formData.forEach((value, key) => {
-                hackathonData[key] = value;
-            });
-
-            try {
-                const response = await fetch('/api/hackathon', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(hackathonData)
-                });
-
-                if (response.ok) {
-                    alert('Hackathon request submitted successfully');
-                    form.reset();
-                } else {
-                    const errorMessage = await response.text();
-                    alert(`Failed to submit hackathon request: ${errorMessage}`);
-                }
-            } catch (error) {
-                console.error('Error submitting hackathon request:', error);
-                alert('Failed to submit hackathon request. Please try again later.');
-            }
-        }
-    });
-});
-
-
-</script>
 
 </body>
 

@@ -1,12 +1,12 @@
 // config/database.js
-
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 // MongoDB connection URI
-const mongoURI = 'mongodb://localhost/hackathon-platform';
-
+const mongoURL = process.env.MONGO_URL;
+// const mongoURL = "mongodb://localhost:27017/hackathon-platform";
 // Connect to MongoDB
-mongoose.connect(mongoURI, {
+mongoose.connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {

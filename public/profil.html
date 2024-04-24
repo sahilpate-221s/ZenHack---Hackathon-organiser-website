@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"
+        defer>
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer />
+    <!-- SPLIDER CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <!-- Testimonials Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: rgba(14, 27, 73, 0.804);
+        }
+    </style>
+</head>
+
+<body class="container overflow-x-hidden" style="margin-left: 0px;padding-left: 0px; ">
+
+
+    <div class="w-screen bg-slate-800 ">
+        <nav class="w-full flex py-6 justify-between items-center navbar"><img src="./images/mylogo22.png" alt="hoobank"
+                class="w-[120px] h-[80px]">
+            <ul class="list-none sm:flex hidden justify-end items-center flex-1 px-9">
+                <li class="font-poppins font-normal cursor-pointer text-[16px] text-white mr-10"><a
+                        href="filee.html">Home</a></li>
+                <li class="font-poppins font-normal cursor-pointer text-[16px] text-white mr-10"><a
+                        href="organize_Hackathon.html">Organise Hackathon</a></li>
+                <li class="font-poppins font-normal cursor-pointer text-[16px] text-white mr-0"><a
+                        href="loginFile.html">Logout</a></li>
+            </ul>
+
+        </nav>
+    </div>
+
+    <!-- left side for profile card -->
+
+    <div class="bodypart flex overflow-hidden">
+        <div class="leftcard bg-slate-600 text-white w-[300px] h-[400px] rounded-2xl m-4">
+            <img src="https://miro.medium.com/max/1024/1*qzwKz8AvnUayRgboTdJPJQ.jpeg" class="rounded-2xl">
+
+            <div class="card flex justify-center items-center relative top-[-50px] bg-transparent">
+                <img src="https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2021-12-13T06%3A22%3A04.610Z-default-image.webp"
+                    class="h-[90px] w-[90px] rounded-lg">
+            </div>
+
+            <div class="flex justify-center h-[50px]">
+                <p id="usernameResult"></p>
+            </div>
+            <div class="flex justify-center h-[30px]">Student</div>
+        </div>
+    </div>
+
+    <div class="w-[802px]  relative top-[-28rem] left-[23rem]">
+        <!-- right side for your hackathons -->
+
+        <div id="hackathonCardsContainer" class="row"></div>
+    </div>
+
+    </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                const response = await fetch('/api/hackathons');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch hackathons');
+                }
+                const hackathons = await response.json();
+                const container = document.getElementById('hackathonCardsContainer');
+                hackathons.forEach(hackathon => {
+                    const card = createHackathonCard(hackathon);
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error fetching hackathons:', error);
+            }
+        });
+    
+        function createHackathonCard(hackathon) {
+            const card = document.createElement('div');
+            card.className = 'col p-md-3';
+    
+            card.innerHTML = `
+                <div class="swiper-slide newCard">
+                    <a class="text-link" href="https://example.com" target="_blank">
+                        <div class="card hack-event-card bg-slate-600 text-white">
+                            <img class="card-img-top border-bottom" src="https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2024-04-04T04%3A57%3A27.781Z-ACE_Hackathon.png" alt="New Hackathon">
+                            <div class="card-body text-white">
+                                <h6>${hackathon.title}</h6>
+                                <p class="hack-description">${hackathon.description}</p>
+                                <p class="last-date">Last date to register: ${hackathon.startDate}</p>
+                                <div class="clearfix">
+                                    <div class="float-left">
+                                        <p class="reg-fee">
+                                            <span>Fee: </span>
+                                            Paid
+                                        </p>
+                                    </div>
+                                    <div class="float-right">
+                                        <p class="hack-type">
+                                            Mode : <span class="text-success">${hackathon.mode}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <a name="" id="" class="btn btn-gradient w-100" href="https://example.com" role="button" target="_blank"
+                                    rel="noreferrer">
+                                    Register Now
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `;
+    
+            return card;
+        }
+    
+        document.getElementById('usernameForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent form submission
+    
+            const email = document.getElementById('email').value;
+    
+            try {
+                const response = await fetch(`/getUsername?email=${encodeURIComponent(email)}`);
+                const data = await response.json();
+                console.log(data);
+                if (data.username) {
+                    document.getElementById('usernameResult').textContent = `${data.username}`;
+                } else {
+                    document.getElementById('usernameResult').textContent = `Error: User not found`;
+                }
+            } catch (error) {
+                console.error('Error fetching username:', error);
+                document.getElementById('usernameResult').textContent = 'Error fetching username';
+            }
+        });
+    </script>
+    
+
+
+</body>
+
+</html>

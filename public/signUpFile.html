@@ -269,14 +269,14 @@ h1 {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const cpassword = document.getElementById('cpassword').value;
-
+    
             const userData = { username, email, password };
-
+    
             if (password !== cpassword) {
                 alert('Passwords do not match');
                 return;
             }
-
+    
             try {
                 const response = await fetch('/api/auth/register', {
                     method: 'POST',
@@ -285,10 +285,10 @@ h1 {
                     },
                     body: JSON.stringify(userData)
                 });
-
+    
                 if (response.status === 201) {
                     console.log('User registered successfully');
-                    window.location.href = 'test.html'; // Redirect to a success page
+                    window.location.href = 'filee.html'; // Redirect to a success page
                 } else if (response.status === 400) {
                     const data = await response.json();
                     alert(data.message);
@@ -301,12 +301,13 @@ h1 {
                 alert('An unexpected error occurred');
             }
         }
-
+    
         document.getElementById('signupForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the form from submitting normally
             registerUser(); // Call the registerUser function to make the AJAX request
         });
     </script>
+    
 </body>
 
 </body>

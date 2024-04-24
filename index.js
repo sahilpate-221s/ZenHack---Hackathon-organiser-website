@@ -1,55 +1,49 @@
+// Add necessary imports
 const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
 const path = require('path');
-const mongooseConnection = require('./config/database');
+const nodemailer = require('nodemailer');
+const mongoose = require('mongoose');
 const User = require('./models/User');
 const Hackathon = require('./models/Hackathon');
 const authRoutes = require('./routes/authRoutes');
+const Email = require('./models/Email');
 const hackathonRoutes = require('./routes/hackathonRoutes');
+require('dotenv').config();
 
+// Initialize express app
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 8000;
 
-
+// Middleware
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//initialize mongoDB
-
-
+// Database connection
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB connection error:', err));
 
 // Endpoint to retrieve username dynamically
 app.get('/getUsername', async (req, res) => {
     try {
-        // Assuming you have the user's email available in req.query.email
-        const userEmail = req.query.email;
-        
-        // Find the user by email in the database
-        const user = await User.findOne({ email: userEmail });
-
-        // If user is found, send back the username
+        const user = await User.findOne({ email: req.query.email });
         if (user) {
-            res.json({ username: user.username ,email : user.email});
+            res.json({ username: user.username });
         } else {
             res.status(404).json({ error: 'User not found' });
         }
     } catch (error) {
-        console.error('Error retrieving username:', error);
+        console.error('Error fetching username:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 });
 
-
-
-// for the form 
-
+// Endpoint to fetch hackathons
 app.get('/api/hackathons', async (req, res) => {
     try {
-        // Fetch the hackathons from your database (this is a placeholder, you need to implement this based on your database schema)
         const hackathons = await Hackathon.find();
-
-        // Return the hackathons as JSON
         res.json(hackathons);
     } catch (error) {
         console.error('Error fetching hackathons:', error);
@@ -57,25 +51,55 @@ app.get('/api/hackathons', async (req, res) => {
     }
 });
 
+// Endpoint to handle email sending
+app.post('/sendEmail', async (req, res) => {
+    const { username, email, hackathonname, date, city } = req.body;
+    try {
+        // Save email data to MongoDB
+        const newEmail = new Email({
+            username,
+            email,
+            hackathonname,
+            date,
+            city
+        });
+        await newEmail.save();
 
+        // Send email using nodemailer
+        let transporter = nodemailer.createTransport({
+            service: process.env.MAIL_HOST,
+            auth: {
+                user: process.env.MAIL_USER,
+                pass: process.env.MAIL_PASS
+            }
+        });
+        let mailOptions = {
+            from: process.env.MAIL_USER,
+            to: email,
+            subject: 'Hackathon Registration Confirmation',
+            text: `Dear ${username},\n\nThank you for registering for the hackathon "${hackathonname}".\n\nEvent Details:\nDate: ${date}\nCity: ${city}\n\nWe look forward to seeing you at the event!\n\nBest regards,\nThe Hackathon Team`
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error('Error sending email:', error);
+                res.status(500).send('Failed to send email');
+            } else {
+                console.log('Email sent: ' + info.response);
+                res.status(200).send('Email sent successfully');
+            }
+        });
+    } catch (error) {
+        console.error('Error saving email to MongoDB:', error);
+        res.status(500).json({ error: 'Failed to save email' });
+    }
+});
 
-
-
-
-
-
-
-
-
-
-
-
-// Routes
+// Mount routes
 app.use('/api/auth', authRoutes);
 app.use('/api/hackathon', hackathonRoutes);
 
+// Start the server
 const server = http.createServer(app);
-
 server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

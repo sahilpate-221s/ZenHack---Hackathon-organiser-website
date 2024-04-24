@@ -26,6 +26,7 @@ const register = async (req, res) => {
     }
 };
 
+
 // Login user
 const login = async (req, res) => {
     try {
@@ -59,6 +60,7 @@ const login = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
+
 
 module.exports = {
     register,
